@@ -14,6 +14,12 @@ const app = express();
 
 app.use(express.json());
 
+app.get('/',(req,res)=>{
+    res.send({
+        api: "/greenfield/v1/api"
+    })
+})
+
 //Defined routes
 app.use('/greenfield/v1/organizations',require('./routes/organizations'));
 app.use('/greenfield/v1/vehicles',require('./routes/vehicles'));
@@ -71,5 +77,12 @@ app.get('/greenfield/v1/api', validateQuery(['city', 'organization_id', 'total_d
     })
 });
 
+app.all('/*',(req,res)=>{
+    res.status(400).send({
+        message: "Invalid Route",
+        status: "error",
+        api: "/greenfield/v1/api"
+    })
+})
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);

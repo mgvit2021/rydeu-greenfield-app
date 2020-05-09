@@ -19,5 +19,5 @@
     "dev": "nodemon app"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }

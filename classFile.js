@@ -3,7 +3,6 @@ const Vehicle = require('./models/Vehicle');
 const Pricing = require('./models/Pricing');
 
 class Validator {
-    
     /* validate body on product post */
     orgValidate(data){
         
@@ -15,7 +14,6 @@ class Validator {
         return schema.validate(data); //returns {error,value} after validation
     }
     vehicleValidate(data){
-        
         const schema=joi.object({
             'id': joi.number().optional(),
             'type': joi.string().required(),
@@ -38,6 +36,21 @@ class Validator {
         
         return schema.validate(data); //returns {error,value} after validation
     }
+
+    pricingUpdate(data){
+
+        const schema=joi.object({
+            'orgId': joi.number().integer().optional(),
+            'vehicle_id': joi.number().integer().optional(),
+            'city': joi.string().optional(),
+            'base_distance_in_km': joi.number().integer().optional(),
+            'km_price': joi.number().integer().optional(),
+            'fix_price': joi.number().integer().optional()
+        });
+        
+        return schema.validate(data); //returns {error,value} after validation
+    }
+
 }
 //Main class for data-fetching and calculation
 class FetchData {

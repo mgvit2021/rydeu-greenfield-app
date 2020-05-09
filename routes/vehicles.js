@@ -13,7 +13,7 @@ const validate = new Validator();
 router.get('/',(req,res)=>{
     Vehicle.findAll()
     .then((vehicles)=>{
-        res.send(vehicles);
+        res.status(200).send(vehicles);
     })
     .catch(err => console.log(err))
 });
@@ -47,6 +47,8 @@ router.post('/',(req,res)=>{
         })
     })
 });
+
+//Get vehicle details by id
 
 router.get('/:id',(req,res)=>{
     var id = req.params.id;
