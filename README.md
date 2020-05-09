@@ -1,7 +1,5 @@
 # Rydeu-greenfield-app
 
----
-
 ## All End Points:
 - **prefix:**
   * ***/greenfield/v1*** : Prefix for all routes.
