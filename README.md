@@ -2,7 +2,7 @@
 
 ## All End Points:
 - **API:**
-  * ***/greenfield/v1/api*** : Pass request as query parameters and get the response from the api.
+  * ***/greenfield/v1/api*** : Pass request as query parameters and get the response from the api. Query parameters - {city,organization_id,total_distance}.
 - **Organizations:**
   * ***/greenfield/v1/organizations*** : Create a new organization or fetch all existing organizations. Supports [GET,POST].
   * ***/greenfield/v1/organizations/{orgId}*** : Fetch an organization.
